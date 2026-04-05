@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bulut Proje Frontend</title>
+</head>
+<body>
+    <h1>Proje Durumu</h1>
+    <div id="sonuc">Veri bekleniyor...</div>
+
+    <script>
+        // Backend adresimize istek atıyoruz
+        fetch('http://127.0.0.1:5000/api/data')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('sonuc').innerText = data.mesaj;
+            })
+            .catch(error => console.error('Hata:', error));
+    </script>
+</body> 
+</html>
